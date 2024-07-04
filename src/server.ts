@@ -1,7 +1,5 @@
 import express from 'express'
 import payload from 'payload'
-import insertCustomer from './db_operation/insertCustomer';
-import insertOrders from './db_operation/insertOrders';
 const scheduleTask = require('./scheduler/scheduler');
 
 
@@ -26,7 +24,8 @@ const start = async () => {
 
   // Add your own express routes here
   const job = scheduleTask();
-  insertOrders();
+
+
 
   app.listen(3000)
 }
