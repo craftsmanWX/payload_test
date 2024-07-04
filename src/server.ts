@@ -1,5 +1,6 @@
 import express from 'express'
 import payload from 'payload'
+const scheduleTask = require('./scheduler/scheduler');
 
 require('dotenv').config()
 const app = express()
@@ -20,6 +21,7 @@ const start = async () => {
   })
 
   // Add your own express routes here
+  const job = scheduleTask();
 
   app.listen(3000)
 }
