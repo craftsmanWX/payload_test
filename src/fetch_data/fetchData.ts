@@ -10,8 +10,8 @@ export const fetchPosts = (callback) => {
       return response.json();
     })
     .then(posts => {
-      console.log(posts[0].id);
-      callback(posts[0].id);
+      //console.log(posts);
+      callback(posts);
     })
     .catch(error => {
       console.error('Error fetching posts:', error);
